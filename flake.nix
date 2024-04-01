@@ -19,7 +19,7 @@
         };
       };
 
-      flake.keys = {
+      flake = {
         pgp = {
           fallback = ./pgp/fallback.asc;
           yubikey.piv-agent = ./pgp/yubikey-15892608/piv-agent.asc;
