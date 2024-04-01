@@ -21,10 +21,12 @@
 
       flake.keys = {
         pgp = {
+          fallback = ./pgp/fallback.asc;
           yubikey.piv-agent = ./pgp/yubikey-15892608/piv-agent.asc;
         };
 
         ssh = {
+          fallback = ./ssh/fallback.pub;
           yubikey.piv-agent.touch-policy = {
             always = ./ssh/yubikey-15892608/piv-agent/touch-policy/always.pub;
             cached = ./ssh/yubikey-15892608/piv-agent/touch-policy/cached.pub;
