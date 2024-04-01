@@ -18,5 +18,19 @@
           ];
         };
       };
+
+      flake.keys = {
+        pgp = {
+          yubikey.piv-agent = ./pgp/yubikey-15892608/piv-agent.asc;
+        };
+
+        ssh = {
+          yubikey.piv-agent.touch-policy = {
+            always = ./ssh/yubikey-15892608/piv-agent/touch-policy/always.pub;
+            cached = ./ssh/yubikey-15892608/piv-agent/touch-policy/cached.pub;
+            never = ./ssh/yubikey-15892608/piv-agent/touch-policy/never.pub;
+          };
+        };
+      };
     };
 }
